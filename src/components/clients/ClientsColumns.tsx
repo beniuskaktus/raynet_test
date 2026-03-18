@@ -21,6 +21,14 @@ export const getClientsColumns = ({
         header: ({ table }) => (
             <div className="flex items-center justify-center">
                 <Checkbox
+                    className="
+                    h-5 w-5 shrink-0
+                    rounded-[4px]
+                    !border !border-black
+                    data-[state=checked]:!border-black
+                    data-[state=checked]:!bg-black
+                    data-[state=checked]:text-white
+                "
                     checked={
                         table.getIsAllPageRowsSelected() ||
                         (table.getIsSomePageRowsSelected() && "indeterminate")
@@ -33,6 +41,15 @@ export const getClientsColumns = ({
         cell: ({ row }) => (
             <div className="flex items-center justify-center">
                 <Checkbox
+                    className="
+                    h-5 w-5 shrink-0
+                    rounded-[4px]
+                    !border !border-black
+                    bg-white
+                    data-[state=checked]:!border-black
+                    data-[state=checked]:!bg-black
+                    data-[state=checked]:text-white
+                "
                     checked={row.getIsSelected()}
                     onCheckedChange={(value) => row.toggleSelected(!!value)}
                     aria-label="Vybrat řádek"

@@ -15,6 +15,7 @@ import {
     updateClient,
 } from "@/api"
 import { mapRaynetClientToFormValues } from "@/lib/mappers"
+import {emptyFormValues} from "@/types/client.ts";
 
 type ClientsCreateDialogProps = {
     open: boolean
@@ -48,14 +49,14 @@ const ClientsCreateDialog = ({
 
         const loadClientDetail = async () => {
             if (!clientId) {
-                reset()
+                reset(emptyFormValues)
                 return
             }
 
             try {
                 setIsLoadingDetail(true)
                 const clientDetail = await fetchClientById(clientId)
-                const formValues = mapRaynetClientToFormValues(clientDetail.data[0])
+                const formValues = mapRaynetClientToFormValues(clientDetail.data)
 
                 console.log("edit detail", clientDetail)
                 console.log("mapped form values", formValues)
@@ -120,13 +121,13 @@ const ClientsCreateDialog = ({
                     ) : (
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="relative border-b border-slate-200 px-10 pb-7 pt-9">
-                                <button
+                                <Button
                                     type="button"
                                     onClick={() => onOpenChange(false)}
                                     className="absolute right-5 top-5 inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-700 hover:bg-slate-100"
                                 >
                                     <X className="h-6 w-6" />
-                                </button>
+                                </Button>
 
                                 <input
                                     {...register("name")}
@@ -174,12 +175,12 @@ const ClientsCreateDialog = ({
                                     </Button>
                                 </div>
 
-                                <button
+                                <Button
                                     type="button"
                                     className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700"
                                 >
                                     <Lock className="h-4 w-4" />
-                                </button>
+                                </Button>
                             </div>
                         </form>
                     )}

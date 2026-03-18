@@ -47,7 +47,7 @@ const ClientsPagination = ({ table }: ClientsPaginationProps) => {
                         <SelectTrigger className="h-9 w-22">
                             <SelectValue />
                         </SelectTrigger>
-                        <SelectContent className="bg-white">
+                        <SelectContent position="popper" className="!rounded-[3px] border-slate-200 bg-white">
                             <SelectItem value="5">5</SelectItem>
                             <SelectItem value="10">10</SelectItem>
                             <SelectItem value="20">20</SelectItem>

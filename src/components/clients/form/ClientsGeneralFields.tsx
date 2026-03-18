@@ -64,7 +64,7 @@ const ClientGeneralFields = ({ form }: Props) => {
                         <SelectTrigger className="h-8 w-full rounded-xl! font-medium! border-amber-200 bg-amber-100 text-amber-900">
                             <SelectValue placeholder="Potenciální odběratel" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent position="popper" className="!rounded-[3px] border-slate-200 bg-white">
                             <SelectItem value="potential-subscriber">Potenciální odběratel</SelectItem>
                             <SelectItem value="actual-client">Aktuální klient</SelectItem>
                             <SelectItem value="supplier">Dodavatel</SelectItem>
@@ -84,7 +84,7 @@ const ClientGeneralFields = ({ form }: Props) => {
                         <SelectTrigger className="h-8 w-full rounded-[3px]! border-slate-200! bg-white text-slate-400">
                             <SelectValue placeholder="Vyberte kategorii" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent position="popper" className="!rounded-[3px] border-slate-200 bg-white">
                             <SelectItem value="green">[zelená]</SelectItem>
                             <SelectItem value="blue">[modrá]</SelectItem>
                         </SelectContent>

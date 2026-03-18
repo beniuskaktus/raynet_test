@@ -72,10 +72,10 @@ const ClientAddressFields = ({ form }: Props) => {
                         value={watch("country") || ""}
                         onValueChange={(value) => setValue("country", value, { shouldValidate: true })}
                     >
-                        <SelectTrigger className="h-8 rounded-[3px] border-slate-200 bg-white">
+                        <SelectTrigger className="h-8 w-full !font-medium !rounded-[3px] border-slate-200 bg-white focus:ring-1 focus:ring-gray-500">
                             <SelectValue placeholder="Země" />
                         </SelectTrigger>
-                        <SelectContent className="bg-white">
+                        <SelectContent position="popper" className="!rounded-[3px] border-slate-200 bg-white">
                             <SelectItem value="cz">Česká republika</SelectItem>
                             <SelectItem value="sk">Slovensko</SelectItem>
                             <SelectItem value="pl">Polsko</SelectItem>
@@ -89,10 +89,10 @@ const ClientAddressFields = ({ form }: Props) => {
                         value={watch("territory") || ""}
                         onValueChange={(value) => setValue("territory", value, { shouldValidate: true })}
                     >
-                        <SelectTrigger className="h-8 rounded-[3px] border-slate-200 bg-white">
+                        <SelectTrigger className="h-8 w-full !font-medium !rounded-[3px] border-slate-200 bg-white px-3 text-sm focus:ring-1 focus:ring-gray-500">
                             <SelectValue placeholder="Obchodní teritorium" />
                         </SelectTrigger>
-                        <SelectContent className="bg-white">
+                        <SelectContent position="popper" className="!rounded-[3px] border-slate-200 bg-white">
                             <SelectItem value="default">Výchozí teritorium</SelectItem>
                         </SelectContent>
                     </Select>

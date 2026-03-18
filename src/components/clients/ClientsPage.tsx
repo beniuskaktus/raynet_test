@@ -12,10 +12,10 @@ import {
 import type { Client } from "@/types/client"
 import { deleteClient, fetchClients } from "@/api"
 import { getClientsColumns } from "@/components/clients/ClientsColumns"
-import { ClientsPagination } from "@/components/clients/ClientsPagination"
-import { ClientsTable } from "@/components/clients/ClientsTable"
-import { ClientsToolbar } from "@/components/clients/ClientsToolbar"
 import ClientsCreateDialog from "@/components/clients/ClientsCreateDialog"
+import ClientsToolbar from "@/components/clients/ClientsToolbar.tsx";
+import ClientsTable from "@/components/clients/ClientsTable.tsx";
+import ClientsPagination from "@/components/clients/ClientsPagination.tsx";
 
 const ClientsPage = () => {
     const [search, setSearch] = useState("")
@@ -71,6 +71,14 @@ const ClientsPage = () => {
         } catch (error) {
             console.error(error)
             alert("Nepodařilo se smazat klienta.")
+        }
+    }
+
+    const handleDialogOpenChange = (open: boolean) => {
+        setDialogOpen(open)
+
+        if (!open) {
+            setSelectedClientId(null)
         }
     }
 
@@ -151,7 +159,7 @@ const ClientsPage = () => {
 
             <ClientsCreateDialog
                 open={dialogOpen}
-                onOpenChange={setDialogOpen}
+                onOpenChange={handleDialogOpenChange}
                 clientId={selectedClientId}
                 onSuccess={loadClients}
             />

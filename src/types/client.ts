@@ -1,3 +1,5 @@
+import type {CreateClientFormValues} from "@/lib/formSchema.ts";
+
 export type ClientStatus = "Aktuální" | "Potenciální"
 export type ClientRating = "A" | "B" | "C"
 
@@ -125,7 +127,7 @@ export type RaynetClient = {
 
 export type RaynetClientResponse = {
     success: boolean
-    data: RaynetClient[]
+    data: RaynetClient
 }
 
 export type RaynetClientPayload = {
@@ -177,4 +179,23 @@ export type RaynetClientPayload = {
     }>
     tags?: string[]
     customFields?: Record<string, string | number | boolean | null>
+}
+
+export const emptyFormValues: CreateClientFormValues = {
+    name: "",
+    clientType: "company",
+    category: "",
+    status: "",
+    regNumber: "",
+    note: "",
+    email: "",
+    phone: "",
+    phoneType: "",
+    website: "",
+    street: "",
+    zipCode: "",
+    city: "",
+    region: "",
+    country: "cz",
+    territory: "",
 }

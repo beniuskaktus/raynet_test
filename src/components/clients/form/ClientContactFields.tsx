@@ -70,7 +70,7 @@ const ClientContactFields = ({ form }: Props) => {
                                 <SelectValue placeholder="Typ" />
                             </SelectTrigger>
 
-                            <SelectContent className="bg-white rounded-[3px]!">
+                            <SelectContent position="popper" className="!rounded-[3px] border-slate-200 bg-white">
                                 <SelectItem value="none">—</SelectItem>
                                 <SelectItem value="work">Pracovní</SelectItem>
                                 <SelectItem value="mobile">Mobil</SelectItem>

@@ -27,7 +27,9 @@ export const fetchClients = async (): Promise<Client[]> => {
         throw new Error(`Raynet request failed: ${response.status}`)
     }
 
-    const json = (await response.json()) as RaynetClientResponse
+    const json = (await response.json())
+
+    console.log(json, "fetch klients");
 
     return json.data.map(mapToClient)
 }
