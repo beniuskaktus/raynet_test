@@ -8,19 +8,6 @@ VITE_RAYNET_API_KEY=api_klic
 VITE_RAYNET_INSTANCE=moje-crm
 ```
 
-A soubor .env.dt.s:
-```js
-interface ImportMetaEnv {
-readonly VITE_RAYNET_USERNAME: string
-readonly VITE_RAYNET_API_KEY: string
-readonly VITE_RAYNET_INSTANCE: string
-}
-
-interface ImportMeta {
-readonly env: ImportMetaEnv
-}
-```
-
 Poté je třeba spustit příkaz:
 
 ```js
